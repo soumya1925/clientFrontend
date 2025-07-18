@@ -1,29 +1,37 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
+import { Slot, useRouter, useSegments } from 'expo-router';
+import { Provider, useSelector } from 'react-redux';
+import { store, RootState } from '../redux/store';
+import { useEffect } from 'react';
 
-import { useColorScheme } from '@/hooks/useColorScheme';
+function AuthProvider({ children }: { children: React.ReactNode }) {
+  const user = useSelector((state: RootState) => state.auth.user);
+  const segments = useSegments();
+  const router = useRouter();
+
+  useEffect(() => {
+    const inAuthGroup = segments[0] === 'login' || segments[0] === 'register';
+  
+    // Wrap in a small timeout to prevent navigating before layout mounts
+    const timeout = setTimeout(() => {
+      if (!user && !inAuthGroup) {
+        router.replace('/login');
+      } else if (user && inAuthGroup) {
+        router.replace('/(tabs)');
+      }
+    }, 100); 
+  
+    return () => clearTimeout(timeout);
+  }, [user, segments]);
+
+  return <>{children}</>;
+}
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-  });
-
-  if (!loaded) {
-    // Async font loading only occurs in development.
-    return null;
-  }
-
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <Provider store={store}>
+      <AuthProvider>
+        <Slot />
+      </AuthProvider>
+    </Provider>
   );
 }
