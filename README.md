@@ -8,6 +8,44 @@ This is a simple yet powerful **Expense Tracking** app built using **React Nativ
 
 ---
 
+# 📱 Expense Tracker App
+A cross-platform React Native mobile application for tracking daily expenses with category-wise breakdown and monthly budgeting. Users can add, edit, and delete their expenses, visualize spending patterns using pie charts, and manage a personalized monthly budget.
+
+# 🔧 Features
+User Authentication (assumed via JWT)
+
+CRUD Operations on expenses
+
+Add new expenses with category, amount, and date
+
+Edit and delete existing records
+
+Monthly Budget Setting
+
+Set a personal monthly spending limit
+
+Visual warning if the budget is exceeded
+
+Category-wise Pie Chart
+
+Visualize expenses split across categories like Food, Travel, Rent, etc.
+
+Uses react-native-chart-kit for mobile-friendly data visualization
+
+Redux Toolkit Integration
+
+Centralized state management with asynchronous thunks for API calls
+
+Persistent Token-based API Requests
+
+Uses AsyncStorage for storing auth tokens
+
+Backend with Express & MongoDB
+
+RESTful API endpoints for expense CRUD
+
+JWT authentication middleware to protect routes
+
 ## 📦 Tech Stack
 
 - **React Native (Expo)**
