@@ -14,8 +14,23 @@ Use the following demo account to log in and explore the app:
 🔑 Password: namehim213
 ---
 
+#🧪 Test User Registration & Login
+If you'd like to verify that user registration and login are working correctly:
+
+Navigate to the Register screen in the app.
+
+Fill out the form to create a new account.
+
+This will send a request to the backend and add a new user to the server.
+
+Once registered, use your credentials to log in from the Login screen and start using the app.
+---
 # 📱 Expense Tracker App
-A cross-platform React Native mobile application for tracking daily expenses with category-wise breakdown and monthly budgeting. Users can add, edit, and delete their expenses, visualize spending patterns using pie charts, and manage a personalized monthly budget.
+A cross-platform React Native mobile application for tracking daily expenses with category-wise breakdown and monthly budgeting.
+Users can add, edit, and delete their expenses, visualize spending patterns using pie charts, and manage a personalized monthly budget.
+
+
+---
 
 # 🔧 Features
 User Authentication (assumed via JWT)
@@ -51,6 +66,8 @@ Backend with Express & MongoDB
 RESTful API endpoints for expense CRUD
 
 JWT authentication middleware to protect routes
+
+----
 
 ## 📦 Tech Stack
 
