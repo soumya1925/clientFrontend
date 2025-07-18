@@ -10,12 +10,8 @@ This is a simple yet powerful **Expense Tracking** app built using **React Nativ
 #🔐 Demo Credentials
 Use the following demo account to log in and explore the app:
 
-yaml
-Copy
-Edit
 📧 Email:    sam16@gmail.com  
 🔑 Password: namehim213
-
 ---
 
 # 📱 Expense Tracker App
