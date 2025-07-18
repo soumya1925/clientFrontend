@@ -31,6 +31,25 @@ This is a simple yet powerful **Expense Tracking** app built using **React Nativ
 
 ---
 
-## 🖥️ Project Structure
+## 🚀 Deployment Instructions
 
+### ✅ Pre-requisites
+
+- Node.js installed
+- Expo CLI (`npm install -g expo-cli`)
+- Vercel CLI (`npm install -g vercel`)
+
+### 🛠️ Build for Web
+
+Update your `package.json` to include the following:
+
+```json
+"scripts": {
+  "start": "expo start",
+  "android": "expo start --android",
+  "ios": "expo start --ios",
+  "web": "expo start --web",
+  "lint": "expo lint",
+  "build": "expo export --platform web"
+}
 
