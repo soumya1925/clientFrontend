@@ -7,6 +7,16 @@ This is a simple yet powerful **Expense Tracking** app built using **React Nativ
 👉 [Click here to view the deployed app](https://clientfrontend-dsczl2n5r-soumya-rouls-projects.vercel.app)
 
 ---
+#🔐 Demo Credentials
+Use the following demo account to log in and explore the app:
+
+yaml
+Copy
+Edit
+📧 Email:    sam16@gmail.com  
+🔑 Password: namehim213
+
+---
 
 # 📱 Expense Tracker App
 A cross-platform React Native mobile application for tracking daily expenses with category-wise breakdown and monthly budgeting. Users can add, edit, and delete their expenses, visualize spending patterns using pie charts, and manage a personalized monthly budget.
